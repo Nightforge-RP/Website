@@ -409,11 +409,12 @@
 
         <div class="category-nav">
             <button class="category-btn active" onclick="filterCategory('all')">All Rules</button>
-            <button class="category-btn" onclick="filterCategory('general')">General</button>
-            <button class="category-btn" onclick="filterCategory('HateAndHarassment')">Hate & Harassment</button>
-            <button class="category-btn" onclick="filterCategory('roleplay')">Roleplay</button>
-            <button class="category-btn" onclick="filterCategory('combat')">Combat</button>
-            <button class="category-btn" onclick="filterCategory('vehicles')">Vehicles</button>
+            <button class="category-btn" onclick="filterCategory('community')">community</button>
+            <button class="category-btn" onclick="filterCategory('core_roleplay')">Core Roleplay</button>
+            <button class="category-btn" onclick="filterCategory('conflict_combat')">Conflict Combat</button>
+            <button class="category-btn" onclick="filterCategory('exploits_fairplay')">Exploits Fairplay</button>
+            <button class="category-btn" onclick="filterCategory('harassment_toxicity')">Harassment Toxicity</button>
+            <button class="category-btn" onclick="filterCategory('special_rp')">Special RP</button>
         </div>
 
         <div id="rulesContainer"></div>
@@ -421,116 +422,169 @@
 
     <script>
         const rulesData = {
-            general: {
-                title: "🔧 General Rules",
+            community: {
+                title: "🤝 Community Rules",
                 rules: [
                     {
-                        title: "Respect All Players",
-                        description: "Treat everyone with respect. No harassment, discrimination, hate speech, or toxicity of any kind will be tolerated. This includes racist, sexist, homophobic, or otherwise offensive remarks."
-                    },
-                    {
-                        title: "No Metagaming",
-                        description: "Do not use out-of-character information in-character. Information gained through Discord, streams, or other OOC methods cannot be used in roleplay scenarios."
-                    },
-                    {
-                        title: "No Power Gaming",
-                        description: "You must give other players a fair chance to roleplay. Forcing actions upon others without giving them opportunity to respond is not allowed."
-                    },
-                    {
-                        title: "Follow Staff Instructions",
-                        description: "When a staff member gives you an instruction, follow it immediately. If you have concerns, you may discuss them after complying or open a ticket."
-                    },
-                    {
-                        title: "No Advertising",
-                        description: "Do not advertise other servers, Discord servers, social media, or any other services without explicit permission from server management."
-                    }
-                ]
-            },
-            HateAndHarassment: {
-                title: "🗡 Hate & Harassment",
-                rules: [
-                    {
-                        title: "No Hate Speech or Bigotry",
-                        description: "This is an RP community—real-world prejudice has no place here. \nProhibited: Racism, sexism, homophobia, transphobia, religious intolerance, or any hate speech (in or out of character). \nRoleplay is not an excuse for hate. Violators will be removed immediately."
+                        title: "Zero Tolerance for Hate & Harassment",
+                        description: "No hate speech, bigotry, racism, sexism, homophobia, transphobia, religious intolerance, or other offensive behavior in or out of character."
                     },
                     {
                         title: "No Harassment",
-                        description: "Includes: Targeted insults, sexual harassment, threats, stalking, or unwanted contact after boundaries are set. \nExamples of unacceptable behavior: \nSpamming messages after being blocked. \nHarassing players over RP via Discord/social media. \nCreating group chats to mock, harass, or doxx others. \nSharing personal info/screenshots without consent. \nReport harassment via ticket with evidence."
+                        description: "Targeted insults, sexual harassment, threats, stalking, or unwanted contact after boundaries are set are prohibited."
+                    },
+                    {
+                        title: "Off-Server Behavior",
+                        description: "Hostile actions like doxxing or threats may result in removal, even if off-server."
+                    },
+                    {
+                        title: "No Toxicity",
+                        description: "Abuse, harassment, and targeted negativity toward players, staff, or the server is not allowed."
+                    },
+                    {
+                        title: "Naming Policy",
+                        description: "Usernames must be appropriate. No slurs, offensive content, or impersonation."
+                    },
+                    {
+                        title: "No Advertising",
+                        description: "Do not promote other servers, Discords, or services without approval."
+                    },
+                    {
+                        title: "Leave Drama at the Door",
+                        description: "Bring positivity and creativity. Avoid personal drama and grudges."
+                    },
+                    {
+                        title: "Compensation Policy",
+                        description: "No compensation for losses from outages; evidence may grant bugs compensation."
                     }
                 ]
             },
-            roleplay: {
-                title: "🎭 Roleplay Rules",
+            core_roleplay: {
+                title: "🎭 Core Roleplay Principles",
                 rules: [
                     {
-                        title: "Stay In Character",
-                        description: "You must remain in character at all times while in the city. Use /ooc sparingly and only when absolutely necessary. Breaking character ruins immersion for everyone."
+                        title: "Roleplay First",
+                        description: "Stay in-character and engage in every scene."
                     },
                     {
-                        title: "Value Your Life (FearRP)",
-                        description: "You must value your character's life as if it were your own. If held at gunpoint or outnumbered, comply with demands. Do not perform unrealistic actions that would endanger your life."
+                        title: "No Breaking Character",
+                        description: "Do not complain about mechanics mid-scene."
                     },
                     {
-                        title: "New Life Rule (NLR)",
-                        description: "If your character dies, you forget everything that happened in the situation leading to your death. You cannot return to the area for 15 minutes and cannot seek revenge."
+                        title: "No Metagaming",
+                        description: "Do not use out-of-character info in character scenes."
                     },
                     {
-                        title: "Realistic Roleplay",
-                        description: "All roleplay must be realistic and believable. Your character should have realistic fears, injuries should be roleplayed appropriately, and actions should make sense in context."
+                        title: "No Stream Sniping",
+                        description: "Gaining in-game advantage by watching streams is prohibited."
                     },
                     {
-                        title: "No Fail RP",
-                        description: "Do not perform actions that break roleplay immersion. Examples include: unrealistic stunts, ignoring injuries, speaking while downed, or performing actions impossible for your character."
+                        title: "No Powergaming",
+                        description: "Do not force outcomes without giving others a chance to respond."
+                    },
+                    {
+                        title: "Fail RP",
+                        description: "Maintain high quality RP and avoid disruptive behavior or outfits."
+                    },
+                    {
+                        title: "Character Separation",
+                        description: "Your characters may not know of, reference, or assist each other."
                     }
                 ]
             },
-            combat: {
-                title: "⚔️ Combat Rules",
+            conflict_combat: {
+                title: "⚔️ Conflict & Combat Rules",
                 rules: [
                     {
-                        title: "No Random Deathmatch (RDM)",
-                        description: "You cannot kill or harm another player without valid roleplay reason and proper initiation. There must be a clear and justifiable reason for violence."
+                        title: "No Random Deathmatching",
+                        description: "Initiate with verbal RP before attacking anyone."
                     },
                     {
-                        title: "No Vehicle Deathmatch (VDM)",
-                        description: "You cannot use your vehicle as a weapon to harm or kill other players without valid roleplay reason. Intentionally ramming into people or vehicles is prohibited."
+                        title: "No Vehicle Deathmatching",
+                        description: "Do not use vehicles as weapons unless escaping."
                     },
                     {
-                        title: "Proper Initiation Required",
-                        description: "Before engaging in hostile actions, proper roleplay initiation must occur. Simply saying 'hands up or die' is not sufficient. Create meaningful interaction first."
+                        title: "No Camping Teleports/Ladders",
+                        description: "Avoid ambushing players in areas without counterplay."
                     },
                     {
-                        title: "Combat Logging Prohibited",
-                        description: "You cannot disconnect or leave the server during an active roleplay situation, especially during or after combat. Doing so will result in severe punishment."
+                        title: "Conflict Numbers",
+                        description: "Respect group limits: only defend with those present; max 5 criminals vs 8 police during heists."
                     },
                     {
-                        title: "Combat Baiting",
-                        description: "Do not intentionally provoke others into combat situations to gain an advantage or create gunfights. All hostile situations must develop naturally through roleplay."
+                        title: "No Endless Conflict",
+                        description: "Repeated attacks require roleplay resolution."
+                    },
+                    {
+                        title: "Post-Conflict Behavior",
+                        description: "Stay in character when downed; use New Life Rule (only vague memory)."
+                    },
+                    {
+                        title: "Pocket Wiping",
+                        description: "Do not loot everything without a roleplay reason."
                     }
                 ]
             },
-            vehicles: {
-                title: "🚗 Vehicle Rules",
+            exploits_fairplay: {
+                title: "🛠 Exploits & Fair Play",
                 rules: [
                     {
-                        title: "Realistic Driving",
-                        description: "Drive realistically according to your character and the situation. Speed limits should be observed in normal circumstances. No excessive speeding through the city without reason."
+                        title: "No Exploiting",
+                        description: "Report bugs and glitches; do not abuse them (combat logging, money duping, respawn abuse)."
                     },
                     {
-                        title: "No Stunt Driving",
-                        description: "Do not perform unrealistic stunts, jumps, or dangerous maneuvers unless it fits your character and the situation. Treat your vehicle as you would in real life."
+                        title: "Value Your Life",
+                        description: "If outgunned, surrender or face appropriate roleplay consequences."
                     },
                     {
-                        title: "Appropriate Vehicles",
-                        description: "Use vehicles appropriate for your character's background and income. A homeless character should not be driving supercars."
+                        title: "No Crime Near Restarts",
+                        description: "Avoid criminal activity within 30 minutes before or after server restarts."
+                    }
+                ]
+            },
+            harassment_toxicity: {
+                title: "💬 Harassment & Toxicity",
+                rules: [
+                    {
+                        title: "No Personal Targeting",
+                        description: "Roleplay conflict is allowed, but personal harassment and repeated forcing into RP is prohibited."
                     },
                     {
-                        title: "Pursuits and Chases",
-                        description: "During police chases, drive realistically and don't exploit game mechanics. Jumping off mountains, abusing shortcuts excessively, or other unrealistic tactics are prohibited."
+                        title: "Ignored Exits",
+                        description: "Ignoring attempts to leave RP is harassment."
                     },
                     {
-                        title: "Vehicle Collision RP",
-                        description: "If involved in a serious collision, you must roleplay injuries appropriately. You cannot immediately exit your vehicle and run away from a major accident."
+                        title: "Not Harassment",
+                        description: "Engaged storylines, rivalries, or gang retaliation with clear RP are allowed."
+                    }
+                ]
+            },
+            special_rp: {
+                title: "🎯 Special RP Restrictions",
+                rules: [
+                    {
+                        title: "No Erotic RP",
+                        description: "Erotic or explicit roleplay content is prohibited."
+                    },
+                    {
+                        title: "Avoid Real Trauma Topics",
+                        description: "Topics like school shootings or suicide should be avoided."
+                    },
+                    {
+                        title: "Ocean Dumping Story RP",
+                        description: "Allowed with story purpose, but never force permanent memory loss or death."
+                    },
+                    {
+                        title: "Corruption RP Requires Approval",
+                        description: "Corruption roleplay must be approved via staff ticket."
+                    },
+                    {
+                        title: "No Abusing Job Perks",
+                        description: "Do not use job mechanics for out-of-character reasons."
+                    },
+                    {
+                        title: "No Copyright Music",
+                        description: "Avoid copyrighted tracks in public gameplay or streams."
                     }
                 ]
             }
